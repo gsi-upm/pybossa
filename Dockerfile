@@ -5,6 +5,8 @@ COPY gsi-template/_navbar.html pybossa/themes/default/templates/_navbar.html
 COPY gsi-template/base.html pybossa/themes/default/templates/base.html
 COPY gsi-template/nuevo.html pybossa/themes/default/templates/nuevo.html
 
+COPY gsi-template/_helpers.html pybossa/themes/default/templates/account/_helpers.html
+
 COPY gsi-template/pybossa-gsi.min.css pybossa/themes/default/static/css/gen/pybossa-gsi.min.css
 
 
