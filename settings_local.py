@@ -49,12 +49,12 @@ CONTACT_TWITTER = 'PyBossa'
 ## APPS_PER_PAGE = 20
 
 ## External Auth providers
-TWITTER_CONSUMER_KEY='oCJchTPJUGWHVUy6hGTJ9ZVs8'
-TWITTER_CONSUMER_SECRET='cJvHc6IHhole8TGJqvTskKH3JxbDzgNyeoEkaibdHpcHVAwm4C'
+TWITTER_CONSUMER_KEY='nW0EHyKsyNHMn2wcLGQXNXQOs'
+TWITTER_CONSUMER_SECRET='aBPGr0CeSB12pbwfLBHlKWa0w2JSlt5Qh62KOwg3GgHg5AigGE'
 # FACEBOOK_APP_ID=''
 # FACEBOOK_APP_SECRET=''
-GOOGLE_CLIENT_ID="571263146729-vno4c9pkkda8pihdpgoid0jimk7jfh4q.apps.googleusercontent.com"
-GOOGLE_CLIENT_SECRET="4hBNX6mTjdoYTGSU6ZN_biFL"
+GOOGLE_CLIENT_ID="346156834004-vpf4srbsjuggelkdgl3082g6mm51q98s.apps.googleusercontent.com"
+GOOGLE_CLIENT_SECRET="5HY34JMrBsXMRw0nvao8gyqz"
 
 ## Supported Languages
 ## NOTE: You need to create a symbolic link to the translations folder, otherwise
