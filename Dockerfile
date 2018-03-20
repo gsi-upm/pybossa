@@ -8,6 +8,8 @@ COPY gsi-template/nuevo.html pybossa/themes/default/templates/nuevo.html
 COPY gsi-template/_helpers.html pybossa/themes/default/templates/account/_helpers.html
 
 COPY gsi-template/pybossa-gsi.min.css pybossa/themes/default/static/css/gen/pybossa-gsi.min.css
+COPY gsi-template/projects.html pybossa/themes/default/templates/account/projects.html
+
 
 
 COPY gsi-template/logo.png pybossa/themes/default/static/img/
