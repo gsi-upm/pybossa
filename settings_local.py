@@ -268,6 +268,6 @@ LIBSASS_STYLE = 'compressed'
 # }
 # Specify which key from the info field of task, task_run or result is going to be used as the root key
 # for exporting in CSV format
-# TASK_CSV_EXPORT_INFO_KEY = 'key'
-# TASK_RUN_CSV_EXPORT_INFO_KEY = 'key2'
-# RESULT_CSV_EXPORT_INFO_KEY = 'key3'
+TASK_CSV_EXPORT_INFO_KEY = 'key'
+TASK_RUN_CSV_EXPORT_INFO_KEY = 'key2'
+RESULT_CSV_EXPORT_INFO_KEY = 'key3'
