@@ -10,6 +10,9 @@ COPY gsi-template/_helpers.html pybossa/themes/default/templates/account/_helper
 COPY gsi-template/pybossa-gsi.min.css pybossa/themes/default/static/css/gen/pybossa-gsi.min.css
 COPY gsi-template/projects.html pybossa/themes/default/templates/account/projects.html
 
+COPY iaps pybossa/themes/default/static/iaps
+COPY pybossaactivacion.png pybossa/themes/default/static/img/pybossaactivacion.png
+COPY pybossavalencia.png pybossa/themes/default/static/img/pybossavalencia.png
 
 
 COPY gsi-template/logo.png pybossa/themes/default/static/img/
