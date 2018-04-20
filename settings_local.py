@@ -18,14 +18,17 @@
 
 # DEBUG = False
 
+import os
+
+
 ## webserver host and port
 HOST = '0.0.0.0'
 PORT = 8080
 
-SECRET = 'foobar'
-SECRET_KEY = 'my-session-secret'
+SECRET = os.environ.get("SECRET")
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
-SQLALCHEMY_DATABASE_URI = 'postgresql://pybossa:supersecretpassword@postgres/pybossa'
+SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
 
 ##Slave configuration for DB
 #SQLALCHEMY_BINDS = {
@@ -49,12 +52,12 @@ CONTACT_TWITTER = 'PyBossa'
 ## APPS_PER_PAGE = 20
 
 ## External Auth providers
-TWITTER_CONSUMER_KEY='nW0EHyKsyNHMn2wcLGQXNXQOs'
-TWITTER_CONSUMER_SECRET='aBPGr0CeSB12pbwfLBHlKWa0w2JSlt5Qh62KOwg3GgHg5AigGE'
+TWITTER_CONSUMER_KEY = os.environ.get("TWITTER_CONSUMER_KEY")
+TWITTER_CONSUMER_SECRET = os.environ.get("TWITTER_CONSUMER_SECRET")
 # FACEBOOK_APP_ID=''
 # FACEBOOK_APP_SECRET=''
-GOOGLE_CLIENT_ID="346156834004-vpf4srbsjuggelkdgl3082g6mm51q98s.apps.googleusercontent.com"
-GOOGLE_CLIENT_SECRET="5HY34JMrBsXMRw0nvao8gyqz"
+GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID")
+GOOGLE_CLIENT_SECRET = os.environ.get("GOOGLE_CLIENT_SECRET")
 
 ## Supported Languages
 ## NOTE: You need to create a symbolic link to the translations folder, otherwise
@@ -268,6 +271,6 @@ LIBSASS_STYLE = 'compressed'
 # }
 # Specify which key from the info field of task, task_run or result is going to be used as the root key
 # for exporting in CSV format
-TASK_CSV_EXPORT_INFO_KEY = 'key'
-TASK_RUN_CSV_EXPORT_INFO_KEY = 'key2'
-RESULT_CSV_EXPORT_INFO_KEY = 'key3'
+TASK_CSV_EXPORT_INFO_KEY = os.environ.get("TASK_CSV_EXPORT_INFO_KEY")
+TASK_RUN_CSV_EXPORT_INFO_KEY = os.environ.get("TASK_RUN_CSV_EXPORT_INFO_KEY")
+RESULT_CSV_EXPORT_INFO_KEY = os.environ.get("RESULT_CSV_EXPORT_INFO_KEY")

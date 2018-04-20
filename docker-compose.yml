@@ -1,4 +1,4 @@
-version: "2"
+version: '2'
 services:
     redis-master:
         image: 'redis:3.0-alpine'
@@ -13,8 +13,8 @@ services:
     postgres:
         image: 'postgres:9.6-alpine'
         environment:
-            - POSTGRES_USER=pybossa
-            - POSTGRES_PASSWORD=supersecretpassword
+            - POSTGRES_USER=${POSTGRES_USER}
+            - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
         volumes:
             - ./db_postgres:/var/lib/postgresql/data
 
@@ -24,7 +24,7 @@ services:
         depends_on:
             - postgres
         environment:
-            - POSTGRES_URL=postgresql://pybossa:supersecretpassword@postgres/pybossa
+            - POSTGRES_URL=${POSTGRES_URL}
         command: sh -c "sleep 5 && python cli.py db_create"
 
     # TODO: create a separate scheduler process??
@@ -36,7 +36,17 @@ services:
         depends_on:
             - db-init
         environment:
-            - POSTGRES_URL=postgresql://pybossa:supersecretpassword@postgres/pybossa
+            - POSTGRES_URL=${POSTGRES_URL}
+            - SECRET=${SECRET}
+            - SECRET_KEY=${SECRET_KEY}
+            - SQLALCHEMY_DATABASE_URI=${SQLALCHEMY_DATABASE_URI}
+            - ITSDANGEROUSKEY=${ITSDANGEROUSKEY}
+            - TWITTER_CONSUMER_KEY=${TWITTER_CONSUMER_KEY}
+            - TWITTER_CONSUMER_SECRET=${TWITTER_CONSUMER_SECRET}
+            - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+            - TASK_CSV_EXPORT_INFO_KEY=${TASK_CSV_EXPORT_INFO_KEY}
+            - TASK_RUN_CSV_EXPORT_INFO_KEY=${TASK_RUN_CSV_EXPORT_INFO_KEY}
+            - RESULT_CSV_EXPORT_INFO_KEY=${RESULT_CSV_EXPORT_INFO_KEY}
         command: python app_context_rqworker.py scheduled_jobs super high medium low email maintenance
 
     # web server
@@ -44,10 +54,21 @@ services:
         image: 'gsipybossa:latest'
         build: .
         container_name: pybossa
-
+        env_file:
+            - .env
         depends_on:
             - db-init
         environment:
-            - POSTGRES_URL=postgresql://pybossa:supersecretpassword@postgres/pybossa
+            - POSTGRES_URL=${POSTGRES_URL}
+            - SECRET=${SECRET}
+            - SECRET_KEY=${SECRET_KEY}
+            - SQLALCHEMY_DATABASE_URI=${SQLALCHEMY_DATABASE_URI}
+            - ITSDANGEROUSKEY=${ITSDANGEROUSKEY}
+            - TWITTER_CONSUMER_KEY=${TWITTER_CONSUMER_KEY}
+            - TWITTER_CONSUMER_SECRET=${TWITTER_CONSUMER_SECRET}
+            - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+            - TASK_CSV_EXPORT_INFO_KEY=${TASK_CSV_EXPORT_INFO_KEY}
+            - TASK_RUN_CSV_EXPORT_INFO_KEY=${TASK_RUN_CSV_EXPORT_INFO_KEY}
+            - RESULT_CSV_EXPORT_INFO_KEY=${RESULT_CSV_EXPORT_INFO_KEY}
         ports:
             - "8080:8080"
