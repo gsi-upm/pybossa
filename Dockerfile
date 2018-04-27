@@ -18,3 +18,5 @@ COPY pybossavalencia.png pybossa/themes/default/static/img/pybossavalencia.png
 COPY gsi-template/logo.png pybossa/themes/default/static/img/
 
 COPY settings_local.py settings_local.py
+
+VOLUME /opt/pybossa/pybossa/themes/default/static/extra

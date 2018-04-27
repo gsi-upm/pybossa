@@ -34,6 +34,7 @@ In this folder, you also have to include a file Golden.csv with at least one gol
 
 The template.html file is the one that is shown to the contributors where tasks are presented. You can modify it if you want and adapting it to your csv.
 The template.html included in project example is our template for sentiments and the template2.html is our template for emotions, if you want to use this one, you have to rename template2.html to template.html.
+The templateextra.html is an example of how to get pictures from the volume called extra, if you want to use you have to add the files that you want to add to the container to your extra folder, adapt the templateextra.html to your project and renaming templateextra.html to template.html .
 
 The report.py script has functions for preparing the data for being inserted to pybossa and generating a report.
 

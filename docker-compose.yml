@@ -58,6 +58,9 @@ services:
             - .env
         depends_on:
             - db-init
+        volumes:
+            - ./extra:/opt/pybossa/pybossa/themes/default/static/extra
+
         environment:
             - POSTGRES_URL=${POSTGRES_URL}
             - SECRET=${SECRET}

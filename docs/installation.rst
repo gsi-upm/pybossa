@@ -12,9 +12,11 @@ The first step of the installation process is cloning the next repository:
 	cd pybossa
 
 
-In this directory, you have to create a file called .env including the following variable names and their values (without quotation marks and spaces before and after the equal sign): SECRET, SECRET_KEY, ITSDANGEROUSKEY, TASK_CSV_EXPORT_INFO_KEY, TASK_RUN_CSV_EXPORT_INFO_KEY, RESULT_CSV_EXPORT_INFO, POSTGRES_USER, POSTGRES_PASSWORD (put the values that you prefer in this variables), POSTGRES_URL and TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET, GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET, which are the credentials that you have to create for enabling Pybossa authentication with Twitter and Google.
+In this directory, you have to create a file called .env including the following variable names and their values (without quotation marks): SECRET, SECRET_KEY, ITSDANGEROUSKEY, TASK_CSV_EXPORT_INFO_KEY, TASK_RUN_CSV_EXPORT_INFO_KEY, RESULT_CSV_EXPORT_INFO, POSTGRES_USER, POSTGRES_PASSWORD (put the values that you prefer in this variables), POSTGRES_URL and TWITTER_CONSUMER_KEY, TWITTER_CONSUMER_SECRET, GOOGLE_CLIENT_ID and GOOGLE_CLIENT_SECRET, which are the credentials that you have to create for enabling Pybossa authentication with Twitter and Google.
 
 In the settings_local.py, there are all the pybossa configuration options that you can configure for personalizing your pybossa environment.
+
+The extra folder is a volume that you can use if you want to add new files to the Pybossa container in order to use them in a project.
 
 
 After creating the .env file, you can run the image executing:

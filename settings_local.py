@@ -35,18 +35,18 @@ SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
 #    'slave': 'postgresql://user:password@server/db'
 #}
 
-ITSDANGEROUSKEY = 'its-dangerous-key'
+ITSDANGEROUSKEY = os.environ.get("its-dangerous-key")
 
 ## project configuration
-BRAND = 'PyBossa'
-TITLE = 'PyBossa'
-LOGO = 'default_logo.svg'
-COPYRIGHT = 'Set Your Institution'
-DESCRIPTION = 'Set the description in your config'
-TERMSOFUSE = 'http://okfn.org/terms-of-use/'
-DATAUSE = 'http://opendatacommons.org/licenses/by/'
-CONTACT_EMAIL = 'info@pybossa.com'
-CONTACT_TWITTER = 'PyBossa'
+BRAND = os.environ.get("OWNER", "GSI-UPM's Pybossa")
+TITLE = os.environ.get("PybossaGSI","PyBossa")
+LOGO = os.environ.get("LOGO","default_logo.svg")
+COPYRIGHT = os.environ.get("COPYRIGHT","Set Your Institution")
+DESCRIPTION = os.environ.get("DESCRIPTION","Set the description in your config")
+TERMSOFUSE = os.environ.get("TERMSOFUSE","http://okfn.org/terms-of-use/")
+DATAUSE = os.environ.get("DATAUSE","http://opendatacommons.org/licenses/by/")
+CONTACT_EMAIL = os.environ.get("EMAIL","gsi-contacto@dit.upm.es")
+CONTACT_TWITTER = os.environ.get("TWITTERACCOUNT", "@gsiupm")
 
 ## Default number of projects per page
 ## APPS_PER_PAGE = 20
