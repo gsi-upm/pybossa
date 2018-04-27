@@ -16,7 +16,7 @@ In this directory, you have to create a file called .env including the following
 
 In the settings_local.py, there are all the pybossa configuration options that you can configure for personalizing your pybossa environment.
 
-The extra folder is a volume that you can use if you want to add new files to the Pybossa container in order to use them in a project.
+The extra folder is a volume that you can use if you want to add new files to the Pybossa container in order to use them in a project. If it doesn't exist, you have to create it in the cloned directory.
 
 
 After creating the .env file, you can run the image executing:
