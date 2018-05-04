@@ -28,32 +28,57 @@ In this directory, there is everything you need to create a new project.
 
 In the file project.json, you have to put the name, short_name and description of your project. You cannot have two projects with the same short_name in the same server.
 
-In the csv folder, you have to include the json or csv that you want to import to Pybossa. If you want to use our templates you need the word Tweet as index of a column of the csv file and if you want to generate our report, you also need id_str as another index.
+In the csv folder, there is an example of a Golden.csv if you want to add Golden questions to your project. 
 
-In this folder, you also have to include a file Golden.csv with at least one golden question.
+In the tweets that you are going to import to Pybossa, if you want to use our templates you need the word Tweet as index of a column of the csv file and if you want to generate our report, you also need id_str as another index.
 
 The template.html file is the one that is shown to the contributors where tasks are presented. You can modify it if you want and adapting it to your csv.
+
+
+You have to change in the template in the function loadUserProgress the argument inside the userProgress function with your project short_name and in the last name of the template, inside the run function you also have to add your project short_name.
+
+
 The template.html included in project example is our template for sentiments and the template2.html is our template for emotions, if you want to use this one, you have to rename template2.html to template.html.
 The templateextra.html is an example of how to get pictures from the volume called extra, if you want to use you have to add the files that you want to add to the container to your extra folder, adapt the templateextra.html to your project and renaming templateextra.html to template.html .
 
-The report.py script has functions for preparing the data for being inserted to pybossa and generating a report.
+The report.py script of the folder report has functions for preparing the data for being inserted to pybossa and generating a report.
 
-If you want to prepare your json data for being inserted to pybossa execute in your projectexample folder:
-
-.. code-block:: bash
-
-	python report.py json jsonfile
-
-Where jsonfile is the name of your json (located in the csv folder).
-
-
-If you want to prepare your csv data for being inserted to pybossa execute:
+If you want to prepare your json data and adding golden questions for being inserted to pybossa execute in your projectexample folder:
 
 .. code-block:: bash
 
-	python report.py csv csvfile
+	python report.py jsongolden jsonfile goldencsvpath
 
-Where csvfile is the name of your json (located in the csv folder).
+Where jsonfile is the name of your json containing the tweets that will be inserted to Pybossa and goldencsvpath the path where your csv file with Golden questions is placed.
+
+
+If you want to prepare your json data without golden questions for being inserted to pybossa execute in your projectexample folder:
+
+.. code-block:: bash
+
+	python report.py jsonnogolden jsonfile
+
+
+Where jsonfile is the name of your json containing the tweets that will be inserted to Pybossa.
+
+
+If you want to prepare your csv data and adding golden questions for being inserted to pybossa execute in your projectexample folder:
+
+.. code-block:: bash
+
+	python report.py csvgolden csvfile goldencsvpath
+
+Where csvfile is the name of your csv containing the tweets that will be inserted to Pybossa and goldencsvpath the path where your csv file with Golden questions is placed.
+
+
+If you want to prepare your csv data without golden questions for being inserted to pybossa execute in your projectexample folder:
+
+.. code-block:: bash
+
+	python report.py csvnogolden csvfile
+
+
+Where csvfile is the name of your csv containing the tweets that will be inserted to Pybossa.
 
 
 
