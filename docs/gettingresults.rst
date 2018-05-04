@@ -32,7 +32,7 @@ In order to use it, you have to download the results as explained before in JSON
 
 .. code-block:: bash
 
-	python report.py report filewithids taskjsonpath taskrunjsonpath goldenpath numberofcategories
+	python report.py report filewithids taskjsonpath taskrunjsonpath numberofcategories goldenpath
 
 
 Where filewithids is the name of the file that have the id_str field of each tweet, taskjsonpath the path where your project task json is placed, thaskrunjsonpath the path where your project task run json is placed, numberofcategories is the number of possible answers; for example, if each task has to be labeled with Positive, Negative or Neutral, you have to substitute numberofcategories with a 3 and goldenpath is the path where your golden questions csv is placed. If you don't want to have golden questions, leave this argument empty.
