@@ -47,38 +47,19 @@ If you want to prepare your json data and adding golden questions for being inse
 
 .. code-block:: bash
 
-	python report.py jsongolden jsonfile goldencsvpath
+	python report.py json jsonfile goldencsvpath
 
-Where jsonfile is the name of your json containing the tweets that will be inserted to Pybossa and goldencsvpath the path where your csv file with Golden questions is placed.
-
-
-If you want to prepare your json data without golden questions for being inserted to pybossa execute in your projectexample folder:
-
-.. code-block:: bash
-
-	python report.py jsonnogolden jsonfile
-
-
-Where jsonfile is the name of your json containing the tweets that will be inserted to Pybossa.
+Where jsonfile is the name of your json containing the tweets that will be inserted to Pybossa and goldencsvpath the path where your csv file with Golden questions is placed. If you don't want golden questions, don't put the goldencsvpath argument.
 
 
 If you want to prepare your csv data and adding golden questions for being inserted to pybossa execute in your projectexample folder:
 
 .. code-block:: bash
 
-	python report.py csvgolden csvfile goldencsvpath
+	python report.py csv csvfile goldencsvpath
 
-Where csvfile is the name of your csv containing the tweets that will be inserted to Pybossa and goldencsvpath the path where your csv file with Golden questions is placed.
+Where csvfile is the name of your csv containing the tweets that will be inserted to Pybossa and goldencsvpath the path where your csv file with Golden questions is placed. If you don't want golden questions, don't put the goldencsvpath argument.
 
-
-If you want to prepare your csv data without golden questions for being inserted to pybossa execute in your projectexample folder:
-
-.. code-block:: bash
-
-	python report.py csvnogolden csvfile
-
-
-Where csvfile is the name of your csv containing the tweets that will be inserted to Pybossa.
 
 
 

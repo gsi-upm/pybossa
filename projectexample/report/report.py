@@ -6,48 +6,38 @@ from pybossa import *
 
 
 ##FUNCIONA
-if ((sys.argv[1] == 'jsongolden') and (len(sys.argv) > 3)):
+if (sys.argv[1] == 'json'):
 	jsonfile = sys.argv[2]
-	goldencsvpath = sys.argv[3]
+	if (len(sys.argv) > 3):
+		goldencsvpath = sys.argv[3]
+	else:
+		goldencsvpath = None
 	print(jsonfile)
-	tweetsForPybossaJsonGolden(jsonfile, goldencsvpath)
+	tweetsForPybossaJson(jsonfile, goldencsvpath)
 
 ##FUNCIONA
-elif ((sys.argv[1] == 'jsonnogolden') and (len(sys.argv) > 2)):
-	jsonfile = sys.argv[2]
-	print(jsonfile)
-	tweetsForPybossaJsonWithoutGolden(jsonfile)
-
-##FUNCIONA
-elif ((sys.argv[1] == 'csvgolden') and (len(sys.argv) > 3)):
+elif (sys.argv[1] == 'csv'):
 	csvfile = sys.argv[2]
-	print(csvfile)
-	goldencsvpath = sys.argv[3]
+	if (len(sys.argv) > 3):
+		goldencsvpath = sys.argv[3]
+	else:
+		goldencsvpath = None
 	print(goldencsvpath)
-	tweetsForPybossaCsvGolden(csvfile, goldencsvpath)
-
-elif ((sys.argv[1] == 'csvnogolden') and (len(sys.argv) > 2)):
-	csvfile = sys.argv[2]
-	print(csvfile)
-	tweetsForPybossaCsvNoGolden(csvfile)
+	tweetsForPybossaCsv(csvfile, goldencsvpath)
 
 ##FUNCIONA
-elif ((sys.argv[1] == 'reportwithgolden') and (len(sys.argv) > 6) ):
-		filewithids = sys.argv[2]
-		taskjsonpath = sys.argv[3]
-		taskrunjsonpath = sys.argv[4]
-		goldenpath = sys.argv[5]
-		numberofcategories = int(sys.argv[6])
-		pybossaReportWithGolden(filewithids, taskjsonpath, taskrunjsonpath, goldenpath, numberofcategories)
-
-elif ((sys.argv[1] == 'reportwithoutgolden') and (len(sys.argv) > 5) ):
-		filewithids = sys.argv[2]
-		taskjsonpath = sys.argv[3]
-		taskrunjsonpath = sys.argv[4]
-		numberofcategories = int(sys.argv[5])
-		pybossaReportWithoutGolden(filewithids, taskjsonpath, taskrunjsonpath, numberofcategories)
-
+elif (sys.argv[1] == 'report'):
+	filewithids = sys.argv[2]
+	taskjsonpath = sys.argv[3]
+	taskrunjsonpath = sys.argv[4]
+	numberofcategories = int(sys.argv[5])
+	if (len(sys.argv) > 6):
+		goldencsvpath = sys.argv[6]
+	else:
+		goldencsvpath = None
+	
+	pybossaReport(filewithids, taskjsonpath, taskrunjsonpath, numberofcategories, goldencsvpath)
 
 
 else:
-	raise ValueError('The only valid parameters are json +jsonfile, csv + csvfile or report + idstrfile + number of categories')
+	raise ValueError('Arguments not valid')

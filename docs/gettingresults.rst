@@ -32,16 +32,10 @@ In order to use it, you have to download the results as explained before in JSON
 
 .. code-block:: bash
 
-	python report.py reportwithgolden filewithids taskjsonpath taskrunjsonpath goldenpath numberofcategories
-
-If you haven't used golden question, then execute:
-
-.. code-block:: bash
-
-	python report.py reportwithoutgolden filewithids taskjsonpath taskrunjsonpath numberofcategories
+	python report.py report filewithids taskjsonpath taskrunjsonpath goldenpath numberofcategories
 
 
-Where filewithids is the name of the file that have the id_str field of each tweet, taskjsonpath the path where your project task json is placed, thaskrunjsonpath the path where your project task run json is placed, goldenpath the path where your golden questions csv is placed and numberofcategories is the number of possible answers; for example, if each task has to be labeled with Positive, Negative or Neutral, you have to substitute numberofcategories with a 3.
+Where filewithids is the name of the file that have the id_str field of each tweet, taskjsonpath the path where your project task json is placed, thaskrunjsonpath the path where your project task run json is placed, numberofcategories is the number of possible answers; for example, if each task has to be labeled with Positive, Negative or Neutral, you have to substitute numberofcategories with a 3 and goldenpath is the path where your golden questions csv is placed. If you don't want to have golden questions, leave this argument empty.
 
 In order to have the inter-agreement Fleiss Kappa coefficient, you have to become aware of that in all the questions there have to be the same amount of users that have contributed.
 
