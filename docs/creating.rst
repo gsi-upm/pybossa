@@ -26,7 +26,7 @@ Once you have registered in Pybossa, go to the local directory where your projec
 
 In this directory, there is everything you need to create a new project.
 
-In the file project.json, you have to put the name, short_name and description of your project. You cannot have two projects with the same short_name in the same server.
+In the file project.json, you have to put the name, short_name and description of your project. You cannot have two projects with the same short_name or name in the same server.
 
 In the csv folder, there is an example of a Golden.csv if you want to add Golden questions to your project. 
 

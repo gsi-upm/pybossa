@@ -35,7 +35,7 @@ SQLALCHEMY_DATABASE_URI = os.environ.get("SQLALCHEMY_DATABASE_URI")
 #    'slave': 'postgresql://user:password@server/db'
 #}
 
-ITSDANGEROUSKEY = os.environ.get("its-dangerous-key")
+ITSDANGEROUSKEY = os.environ.get("ITSDANGEROUSKEY")
 
 ## project configuration
 BRAND = os.environ.get("OWNER", "GSI-UPM's Pybossa")
